@@ -1,0 +1,43 @@
+.container{
+    margin-top: 6vh;
+}
+
+.single-product{
+  border: 2px solid black;
+  border-radius: 0.8vh;
+  background: rgba(255, 255, 255, 0.748);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  height: 100%;
+}
+
+.single-product img {
+    border-radius: 0.8vh;
+    border: 2px solid rgba(112, 112, 112, 0.972);
+    display: block;
+    width: 100%;
+    height: 200px;
+}
+
+.single-product h2{
+    min-height: 8.5vh;
+}
+
+.single-product p:first-of-type{
+    font-weight: 500;
+    font-size: 18px;
+    min-height: 8vh;
+    margin-top: 2vh;
+}
+
+.single-product p:last-of-type{
+    min-height: 3vh;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.single-product button{
+    margin-top: auto;
+}

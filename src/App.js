@@ -1,17 +1,16 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navigation from './Components/Navigation/Navigation';
-//import MainPage from ''
-//import CartPage from ''
 import LoginPage from './pages/LoginPage/LoginPage'
+import MainPage from './pages/MainPage/MainPage';
 
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 
 
 
-function App() {
 
+function App() {
   const {isLoggedIn} = useContext(AuthContext)
 
   if (!isLoggedIn){
@@ -23,8 +22,8 @@ function App() {
   return (
     <BrowserRouter>
       <Navigation/>
+      <MainPage/>
       <Routes>
-
       </Routes>
     </BrowserRouter>   
   );

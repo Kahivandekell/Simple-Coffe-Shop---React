@@ -1,33 +1,26 @@
-.navbar{
+.navigation-container{
     align-items: center;
-    background-color: rgba(170, 170, 170, 0.354);
-    color: black;
+    background-color: #1f1f1f;
+    color: white;
     display: flex;
-    font-family: 'Times New Roman', Times, serif;
     height: 8vh;
     justify-content: space-between;
-    padding: 15px 30px;
+    padding: 0 30px;
 }
 
-.navbar a{
-    color: black;
-    font-size: 5vh;
-    margin-left: 2vh;
-    text-decoration: none;
-}
-
-.navbar a{
-    cursor: pointer;
-}
-
-.navbard-links{
+.linksList{
+    align-items: center;
     display: flex;
+    font-size: 24px;
+    gap: 20px;
     list-style: none;
-    gap: 3vh;
+    margin: 0;
+    padding: 0 30px;
 }
 
-.navbard-links a{
-    color: black;
-    font-size: 3vh;
-    text-decoration: none;
+.logoutButton{
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
 }

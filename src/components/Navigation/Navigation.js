@@ -5,25 +5,24 @@ import './Navigation.css'
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 
-
-
 const Navigation = () => {
     const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext)
 
     return(
-        <nav className="navbar">
-            <a><Link to="/">Coffee Shop</Link></a>
-                
-            <div>
-                <ul className="navbard-links">
-                    <li>
-                        <a><Link to="/shop">Shop</Link></a>
+        <nav className="navigation-container">
+            <div className="brandName">
+                <h2>Coffe Shop</h2>
+            </div>
+            <div className='linksList-container'>
+                <ul className="linksList">
+                    <li className="linkItem">
+                        <Link className="nav-link" to="/"> Shop</Link>
                     </li>
-                    <li>
-                        <a><Link to="/cart">Cart</Link></a>
+                    <li className="linkItem">
+                        <Link className="nav-link" to="/cart">Cart</Link>
                     </li>
-                    <li>
-                        {isLoggedIn === true ? <button onClick={() => setIsLoggedIn(false)}>wyloguj</button>: ""}
+                    <li className="linkItem">
+                        <button className="logoutButton" onClick={() => setIsLoggedIn(false)}>Logout</button>
                     </li>
                 </ul>
             </div>
