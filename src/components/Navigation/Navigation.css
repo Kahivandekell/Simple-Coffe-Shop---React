@@ -1,0 +1,33 @@
+.navbar{
+    align-items: center;
+    background-color: rgba(170, 170, 170, 0.354);
+    color: black;
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    height: 8vh;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+.navbar a{
+    color: black;
+    font-size: 5vh;
+    margin-left: 2vh;
+    text-decoration: none;
+}
+
+.navbar a{
+    cursor: pointer;
+}
+
+.navbard-links{
+    display: flex;
+    list-style: none;
+    gap: 3vh;
+}
+
+.navbard-links a{
+    color: black;
+    font-size: 3vh;
+    text-decoration: none;
+}

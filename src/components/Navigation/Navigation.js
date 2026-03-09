@@ -1,16 +1,34 @@
 import React from "react";
 import { Link } from 'react-router-dom'
+import './Navigation.css'
 
-export default class Navigation extends React.Component {
-    render() {
-        return(
-            <nav>
-                <h2></h2>
-                <ul>
-                    <li> <Link to="/">Home</Link></li>
-                    <li> <Link to="/articles">Articles</Link></li>
+import { useContext } from 'react';
+import { AuthContext } from './context/AuthContext';
+
+
+
+const Navigation = () => {
+    const {isLoggedIn} = useContext(AuthContext)
+
+    return(
+        <nav className="navbar">
+            <a><Link to="/">Coffee Shop</Link></a>
+                
+            <div>
+                <ul className="navbard-links">
+                    <li>
+                        <a><Link to="/shop">Shop</Link></a>
+                    </li>
+                    <li>
+                        <a><Link to="/cart">Cart</Link></a>
+                    </li>
+                    <li>
+                        {isLoggedIn === true ? <button>wyloguj</button>: ""}
+                    </li>
                 </ul>
-            </nav>
-        )
-    }
+            </div>
+        </nav>
+        )  
 }
+
+export default Navigation
