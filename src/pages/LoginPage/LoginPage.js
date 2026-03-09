@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import './LoginPage.css'
 
 
 const LoginPage = () => {
@@ -20,15 +21,23 @@ const LoginPage = () => {
         }
     }
     return(
-        <div>
+        <div className="Login-container">
             <form onSubmit={formSumbit}>
-                <h2>Sing in</h2>
-                <label for="username">Login:</label>
-                <input type="text" id="username" value={login} onChange={(val) => setLogin(val.target.value)}/>
-
-                <label for="user-password">Password:</label>
-                <input type="text" id="user-password" value={password} onChange={(val) => setPassword(val.target.value)}/>
-                <button>Submit</button>
+                <div className="header">
+                    <h2>Login</h2>
+                </div>
+                <div className="inputs">
+                    <label htmlFor="username">Username</label>
+                    <input type="text" id="username" value={login} onChange={(val) => setLogin(val.target.value)}/>
+                </div>
+                <div className="inputs">
+                    <label htmlFor="user-password">Password</label>
+                    <input type="password" id="user-password" value={password} onChange={(val) => setPassword(val.target.value)}/>
+                </div>
+                <div className="login-button">
+                    <button>Submit</button>
+                </div>
+                
             </form>
         </div>
 

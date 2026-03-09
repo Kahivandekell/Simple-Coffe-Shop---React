@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import './Navigation.css'
 
 import { useContext } from 'react';
-import { AuthContext } from './context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
 
 
 const Navigation = () => {
-    const {isLoggedIn} = useContext(AuthContext)
+    const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext)
 
     return(
         <nav className="navbar">
@@ -23,7 +23,7 @@ const Navigation = () => {
                         <a><Link to="/cart">Cart</Link></a>
                     </li>
                     <li>
-                        {isLoggedIn === true ? <button>wyloguj</button>: ""}
+                        {isLoggedIn === true ? <button onClick={() => setIsLoggedIn(false)}>wyloguj</button>: ""}
                     </li>
                 </ul>
             </div>
