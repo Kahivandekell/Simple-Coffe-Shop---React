@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navigation from './Components/Navigation/Navigation';
 import LoginPage from './pages/LoginPage/LoginPage'
 import MainPage from './pages/MainPage/MainPage';
+import CartPage from './pages/CartPage/CartPage';
 
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
@@ -22,9 +23,10 @@ function App() {
   return (
     <BrowserRouter>
       <Navigation/>
-      <MainPage/>
-      <Routes>
-      </Routes>
+        <Routes>
+          <Route path='/' element={<MainPage/>}/>
+          <Route path='/cart' element={<CartPage/>}/>
+        </Routes>
     </BrowserRouter>   
   );
   }
