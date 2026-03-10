@@ -2,12 +2,28 @@ import React from 'react'
 import products from '../../data/products'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './MainPage.css'
+import { useState } from 'react'
+import SortSelect from '../../Components/SortSelect/SortSelect'
+
+
 
 export default function MainPage (){
+
+    const [searchTerm, setSearchTerm] = useState("")
+    const [minPrice, setMinPrice] = useState("")
+    const [maxPrice, setMaxPrice] = useState("")
+    const [sortPrice, setSortPrice] = useState("")
+
+    const sortProducts = products.filter((product) => (
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    ))
+
     return(
         <div className="container text-center">
-            <div class="row gx-4 gy-4">
-                {products.map((products) => (
+            <SortSelect searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+
+            <div className="row gx-4 gy-4">
+                {sortProducts.map((products) => (
                 <div key={products.id} className='col-12 col-sm-6 col-md-4'> 
                     <div className='single-product'>
                         <h2>{products.name}</h2>
