@@ -11,7 +11,6 @@ const LoginPage = () => {
 
     const formSumbit = (form) =>{
         form.preventDefault()
-        //console.log(login, password)
 
         if (login === "user" && password === "user"){
             console.log("zalogowano pomyslnie")
