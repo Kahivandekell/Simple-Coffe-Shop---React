@@ -24,7 +24,7 @@ export default function SortSelect({
                     <input className="price-input" type="number" placeholder={maxProductValue + "zł"} value={maxPrice} onChange={(val) => setMaxPrice(val.target.value)}/>
                 </div>
 
-                <button className="btn btn-dark sort-button" type="button" onClick={() => setSortPrice === "up" ? "down" : 'up' }>sort</button>
+                <button className="btn btn-dark sort-button" type="button" onClick={() => setSortPrice(sortPrice=== "up" ? "down" : 'up')}>{sortPrice=== "up" ? "down" : 'up'}</button>
             </form>
         </div>
     )

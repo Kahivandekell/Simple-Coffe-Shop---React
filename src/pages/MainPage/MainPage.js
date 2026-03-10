@@ -17,9 +17,20 @@ export default function MainPage (){
         const matchesName = product.name.toLowerCase().includes(searchTerm.toLowerCase()) || searchTerm === ""
         const minimum = product.price >= Number(minPrice) || minPrice === ""
         const maximum = product.price <= Number(maxPrice) || maxPrice === ""
-        const sortPrice = product.price //dokonczyc 
 
         return (matchesName && minimum && maximum)
+    })
+
+    const sortByPrice = products.sort((a, b) => {
+        if (sortPrice === "up"){
+            return a.price - b.price    
+        }
+
+        if (sortPrice === "down"){
+            return b.price - a.price    
+        }
+
+        return 0
     })
 
     // Dodawanie rzeczy do koszyka

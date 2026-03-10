@@ -11,6 +11,10 @@ export default function CartPage() {
         const updatedCart = cartItems.filter((prod) => prod.id !== id)
         setCartItems(updatedCart)
     }
+/*  DODAC ZLICZANIE
+    const countedProducts = cartItems.map((prod, index) => {
+        const 
+    })  */
 
     if (Object.keys(cartItems).length === 0){
         console.log("wykona sie")
