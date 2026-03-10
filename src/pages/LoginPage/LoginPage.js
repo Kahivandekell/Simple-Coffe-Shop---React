@@ -31,7 +31,7 @@ const LoginPage = () => {
                 </div>
                 <div className="inputs">
                     <label htmlFor="user-password">Password</label>
-                    <input type="password" id="user-password" value={password} onChange={(val) => setPassword(val.target.value)}/>
+                    <input type="password" id="user-password" autoComplete="off" value={password} onChange={(val) => setPassword(val.target.value)}/>
                 </div>
                 <div className="login-button">
                     <button>Submit</button>

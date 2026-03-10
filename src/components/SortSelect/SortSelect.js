@@ -1,6 +1,7 @@
 import React from "react";
 import './SortSelect.css'
 import products from "../../data/products";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function SortSelect({ 
     searchTerm, setSearchTerm,
@@ -17,10 +18,13 @@ export default function SortSelect({
         <div className="search-container">
             <form className="search-form" role="search">
                 <input className="search-input" type="search" placeholder="Search" value={searchTerm} onChange={(val) => setSearchTerm(val.target.value)}/>
-                <input className="search-input" type="number" placeholder={minProductValue + "zł"} value={minPrice} onChange={(val) => setMinPrice(val.target.value)}/>
-                <input className="search-input" type="number" placeholder={maxProductValue + "zł"} value={maxPrice} onChange={(val) => setMaxPrice(val.target.value)}/>
-                
-                <button className="btn btn-dark" type="button" onClick={() => setSortPrice === "up" ? "down" : 'up' }>sort</button>
+
+                <div className="price-inputs-container">
+                    <input className="price-input" type="number" placeholder={minProductValue + "zł"} value={minPrice} onChange={(val) => setMinPrice(val.target.value)}/>
+                    <input className="price-input" type="number" placeholder={maxProductValue + "zł"} value={maxPrice} onChange={(val) => setMaxPrice(val.target.value)}/>
+                </div>
+
+                <button className="btn btn-dark sort-button" type="button" onClick={() => setSortPrice === "up" ? "down" : 'up' }>sort</button>
             </form>
         </div>
     )
