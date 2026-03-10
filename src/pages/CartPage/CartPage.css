@@ -1,0 +1,22 @@
+.Cart{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 0.8vh;
+    width: 70%;
+    min-height: 200px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.Cart h4{
+    text-align: center;
+}
+
+.cart-prod{
+    border-bottom: 1px solid black;
+    padding: 12px 0;
+}
+
+.cart-prod:last-child{
+    border-bottom: none;
+}

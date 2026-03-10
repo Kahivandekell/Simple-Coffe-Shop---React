@@ -1,6 +1,5 @@
 import React from 'react'
 import products from '../../data/products'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import './MainPage.css'
 import SortSelect from '../../Components/SortSelect/SortSelect'
 
@@ -28,7 +27,6 @@ export default function MainPage (){
     
     const addProductToCart = (product) => {
         setCartItems([...cartItems, product])
-        console.log(cartItems)
     }
 
     return(

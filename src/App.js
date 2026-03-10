@@ -33,9 +33,3 @@ function App() {
 }
 
 export default App;
-
-/* 
-Dodac
-<Route path="/" element={<MainPage/>}/>
-<Route path="/cart" element={<CartPage/>}/>
-*/ 
