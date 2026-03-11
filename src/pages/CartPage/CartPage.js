@@ -1,7 +1,5 @@
-import React from "react";
 import { useContext} from "react";
 import { CartContext } from "../../context/CartContext";
-import products from "../../data/products";
 import './CartPage.css'
 
 export default function CartPage() {
@@ -14,22 +12,17 @@ export default function CartPage() {
     }
 
     const clearCart = () => (setCartItems([]))
-    
-    // Zliczanie produktów
-    const countedProducts = {}
 
-    cartItems.forEach((product) => {
-        const newProduct = product.id
-        if (countedProducts[newProduct]){
-            countedProducts[newProduct] += 1
-        } else{
-            countedProducts[newProduct] = 1
-        }
+    // kwota
+    let totalCartValue = 0
+
+    cartItems.forEach((product) =>{
+        totalCartValue += product.price * product.count
     })
-    console.log(countedProducts)
 
+
+    //glowne dzialanie
     if (Object.keys(cartItems).length === 0){
-        console.log("wykona sie")
         return(
             <div className="Cart">
                 <h4>Nie masz jeszcze żadnych rzecz w koszyku</h4>
@@ -41,14 +34,20 @@ export default function CartPage() {
             {cartItems.map((products) => 
                 <div className="cart-prod">
                     <h2>{products.name}</h2>
-                    <p>Cost: <b>{products.price}</b></p>
+                    <p>Cost: {products.price} zł</p>
                     <p>Count: {products.count}</p>
                     <button className="btn btn-danger" type="button" onClick={() => removeProducts(products.id)}>Delete</button>
                 </div>
 
             )}
-            <button className="" type="button" onClick={() => removeProducts()}>Buy</button>
-            <button className="" type="button" onClick={clearCart}>Clear</button>
+            <p><b>Total: {totalCartValue}</b></p>
+            <div className="cart-buttons">
+                <button className="btn btn-success" type="button" onClick={() => {
+                    clearCart()
+                    console.log("wyslane :D")
+                }}>Buy</button>
+                <button className="btn btn-danger" type="button" onClick={clearCart}>Clear</button>
+            </div>
         </div>
     )}
 }

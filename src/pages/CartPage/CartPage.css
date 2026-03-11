@@ -20,3 +20,10 @@
 .cart-prod:last-child{
     border-bottom: none;
 }
+
+.cart-buttons{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+}
