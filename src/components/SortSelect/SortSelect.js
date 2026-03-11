@@ -13,7 +13,6 @@ export default function SortSelect({
     const minProductValue = Math.min(...products.map(val => (val.price)))
     const maxProductValue = Math.max(...products.map(val => (val.price)))
     
-    //Do dokończenia sortowanie rosnące lub malejące + dodanie strzałek czy czegosc
     return(
         <div className="search-container">
             <form className="search-form" role="search">

@@ -7,7 +7,6 @@ import { useState, useContext } from 'react'
 import { CartContext } from '../../context/CartContext';
 
 export default function MainPage (){
-    //Do dokończenia sortowanie rosnące lub malejące + dodanie strzałek czy czegosc
     const [searchTerm, setSearchTerm] = useState("")
     const [minPrice, setMinPrice] = useState("")
     const [maxPrice, setMaxPrice] = useState("")
@@ -33,11 +32,19 @@ export default function MainPage (){
         return 0
     })
 
-    // Dodawanie rzeczy do koszyka
+    // Dodawanie rzeczy do koszyka + counter
     const { cartItems, setCartItems} = useContext(CartContext)
     
     const addProductToCart = (product) => {
-        setCartItems([...cartItems, product])
+        setCartItems((prevItems) => {
+            const isProductInCart = prevItems.find((item) => item.id === product.id)
+
+            if (isProductInCart) {
+                return prevItems.map((item) => item.id === product.id ? {...item, count: (item.count || 1) + 1} : item) 
+            }else{
+                return [...prevItems, {...product, count : 1}]
+            }
+        })
     }
 
     return(
