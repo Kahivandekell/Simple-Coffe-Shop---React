@@ -11,7 +11,7 @@ const Navigation = () => {
     return(
         <nav className="navigation-container">
             <div className="brandName">
-                <h2>Coffe Shop</h2>
+                <h2>Coffee Shop</h2>
             </div>
             <div className='linksList-container'>
                 <ul className="linksList">

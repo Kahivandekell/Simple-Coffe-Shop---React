@@ -1,7 +1,7 @@
 import React from 'react'
 import products from '../../data/products'
 import './MainPage.css'
-import SortSelect from '../../Components/SortSelect/SortSelect'
+import SortSelect from '../../components/SortSelect/SortSelect'
 
 import { useState, useContext } from 'react'
 import { CartContext } from '../../context/CartContext';
@@ -33,7 +33,7 @@ export default function MainPage (){
     })
 
     // Dodawanie rzeczy do koszyka + counter
-    const { cartItems, setCartItems} = useContext(CartContext)
+    const { setCartItems} = useContext(CartContext)
     
     const addProductToCart = (product) => {
         setCartItems((prevItems) => {
